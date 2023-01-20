@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --level-one: translateZ(3rem);
+    --level-two: translateZ(6rem);
+    --level-three: translateZ(9rem);
+    
+    --fw-normal: 400;
+    --fw-bold: 700;
+    
+    --clr1: #000000;
+    --clr2: #f4f4f4;
+
+    --whitish:#f4f4f4;
+    --blackish:#000;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    font-family: 'Oswald', sans-serif;
+  }
+  .card1{
+    height: 33.3vh;
+  }
+  .card {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .card__content {
+    text-align: center;
+    position: relative;
+    padding: 15em 5em;
+    transition: transform 3s;
+    background: pink;
+    transform-style: preserve-3d;
+  }
+  
+  .card:hover .card__content {
+    transform: rotateY(.5turn);
+  }
+  
+  .card__front,
+  .card__back {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5em 3em;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    display: grid;
+    align-content: center;
+  }
+  
+  .card__front {
+    background-color: var(--clr2);
+    
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: #333;
+  }
+  
+
+  
+  .card__front::before {
+    content: '';
+    position: absolute;
+    --spacer: 1em;
+   
+    border: 3px solid currentColor;
+    transform: var(--level-one);
+  }
+  
+  .card__title {
+    font-size: 3.5rem;
+    transform: var(--level-three);
+    order: 2;
+    text-transform: uppercase;
+  }
+  
+  .card__subtitle {
+    transform: var(--level-two);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: .75rem;
+    font-weight: var(--fw-bold);
+    opacity: .7;
+  }
+  
+  .card__body {
+    transform: var(--level-two);
+    font-weight: var(fw-normal);
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+  .cardback{
+    font-size: 3rem;
+  }
+  
+  
+  .card__back {
+    transform: rotateY(.5turn);
+    color: black;
+    background: var(--clr2);
+  }
+  
+  .white__back_font_black{
+    color: var(--blackish);
+    background-color: var(--whitish);
+  }
+.black__back_font__white{
+    background-color: var(--blackish);
+    color: var(--whitish); 
+}
+
+.link{
+  color: black;
+  text-decoration: underline;
+}
+.link:hover{
+  color: black;
+}
